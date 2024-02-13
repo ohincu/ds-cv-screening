@@ -11,7 +11,7 @@ from nltk.corpus import stopwords
 # Transform words to tokens
 from nltk.tokenize import word_tokenize 
 # Extract text from CVs in PDF
-import PyPDF2 
+import pdfplumber
 # Visualize the final evaluation
 import plotly.graph_objects as go 
 
@@ -46,11 +46,11 @@ def preprocess_text(text):
 #############################################
 
 def extract_text_from_pdf(pdf_path):
-    text = ""
-    with open(pdf_path, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
-        for page in reader.pages:
+    with pdfplumber.open(pdf_path) as pdf:
+        text = ""
+        for page in pdf.pages:
             text += page.extract_text()
+        text = text.replace('\n', ' ').lower()
     return text
 
 def assign_points(pdf_path, points_by_cv, skill_areas):
