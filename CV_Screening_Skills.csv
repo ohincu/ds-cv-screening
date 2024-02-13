@@ -7,17 +7,17 @@ qlik,survival,nvm,convolutional neural network,cran,dask,named entity recognitio
 domo,hypothesis testing,naive bayes,rnn,dplyr,pandas,pos tagging,kubernetes
 sisense,bayes,pca,recurrent neural network,tidyr,numpy,word2vec,scala
 ,factor analysis,decision trees,object detection,lubridate,scikitlearn,word embedding,teradata
-,forecasting,ensemble models,yolo,knitr,sklearn,lsi,big query
-,time series,,gpu,r markdown,matplotlib,spacy,aws lambda
-,markov chain,,cuda,,scipy,gensim,aws emr
-,monte carlo,,tensorflow,,seaborn,nltk,hive
-,bayesian inference,,lstm,,bokeh,nmf,hadoop
-,a/b testing,,gan,,statsmodel,doc2vec,sql
-,pca,,opencv,,pyspark,cbow,apache
-,regression,,transformers,,prefect,bag of words,java
-,,,pytorch,,,skip gram,oracle
-,,,mxnet,,,bert,mongodb
-,,,resnet,,,chatbot,cassandra
-,,,efficientnet,,,sentiment analysis,redis
+,forecasting,ensemble models,yolo,knitr,scikit-learn,lsi,big query
+,time series,,gpu,r markdown,sklearn,spacy,aws lambda
+,arima,,cuda,,matplotlib,gensim,aws emr
+,sarima,,tensorflow,,scipy,nltk,hive
+,prophet,,lstm,,seaborn,nmf,hadoop
+,ets,,gan,,bokeh,doc2vec,sql
+,markov chain,,opencv,,statsmodel,cbow,apache
+,monte carlo,,transformers,,pyspark,bag of words,java
+,bayesian inference,,pytorch,,prefect,skip gram,oracle
+,a/b testing,,mxnet,,,bert,mongodb
+,pca,,resnet,,,chatbot,cassandra
+,regression,,efficientnet,,,sentiment analysis,redis
 ,,,,,,,talend
 ,,,,,,,dbt
