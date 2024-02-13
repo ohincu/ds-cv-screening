@@ -15,19 +15,25 @@ import PyPDF2
 # Visualize the final evaluation
 import plotly.graph_objects as go 
 
-
 #############################################
 # Load skills file and manipulate it
 #############################################
 
-skills_df = pd.read_csv('NLP_CV_Screening.csv')
-skills_by_area = {}
-for area, skills in skills_df.items():
-    area = area.lower()
-    if area != 'skill area':
-        for skill in skills.dropna():
-            skills_by_area[skill.lower()] = area
-        
+def extract_skills(csv_file):
+    skills_df = pd.read_csv(csv_file)
+    skills_by_area = {}
+    for area, skills in skills_df.items():
+        area = area.lower()
+        skills = [skill.lower() for skill in skills.dropna()]
+        # Skip the first column (skill area) so no points are assigned
+        if area != 'skill area':
+            for skill in skills:
+                skills_by_area[skill] = area
+
+    return skills_by_area
+
+skills_by_area = extract_skills('CV_Screening_Skills.csv')
+
 # Preprocess CV text
 def preprocess_text(text):
     tokens = word_tokenize(text)
@@ -47,7 +53,7 @@ def extract_text_from_pdf(pdf_path):
             text += page.extract_text()
     return text
 
-def update_points(pdf_path, points_by_cv, skill_areas):
+def assign_points(pdf_path, points_by_cv, skill_areas):
     pdf_text = extract_text_from_pdf(pdf_path)
     pdf_tokens = preprocess_text(pdf_text)
     points_by_area = {area: 0 for area in skill_areas}
@@ -72,7 +78,7 @@ skill_areas = list(set(skills_by_area.values()))
 for file in os.listdir(pdf_folder):
     if file.endswith('.pdf'):
         pdf_path = os.path.join(pdf_folder, file)
-        update_points(pdf_path, points_by_cv, skill_areas)
+        assign_points(pdf_path, points_by_cv, skill_areas)
 
 data = {area: [] for area in skill_areas}
 for cv_name, points in points_by_cv.items():
