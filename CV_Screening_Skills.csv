@@ -1,0 +1,23 @@
+BI,Statistics,ML,Deep Learning,R,Python,NLP,Data Engineering
+tableau,statistical model,clustering,neural network,r,python,nlp,aws
+power bi,statistical modeling,K means,keras,ggplot,flask,natural language processing,ec2
+metabase,probability,random forest,theano,ggplot2,django,topic modeling,amazon redshift
+looker,normal distribution,xgboost,cnn,shiny,streamlit,lda,s3
+qlik,survival,nvm,convolutional neural network,cran,dask,named entity recognition,docker
+domo,hypothesis testing,naive bayes,rnn,dplyr,pandas,pos tagging,kubernetes
+sisense,bayes,pca,recurrent neural network,tidyr,numpy,word2vec,scala
+,factor analysis,decision trees,object detection,lubridate,scikitlearn,word embedding,teradata
+,forecasting,ensemble models,yolo,knitr,sklearn,lsi,big query
+,time series,,gpu,r markdown,matplotlib,spacy,aws lambda
+,markov chain,,cuda,,scipy,gensim,aws emr
+,monte carlo,,tensorflow,,seaborn,nltk,hive
+,bayesian inference,,lstm,,bokeh,nmf,hadoop
+,a/b testing,,gan,,statsmodel,doc2vec,sql
+,pca,,opencv,,pyspark,cbow,apache
+,regression,,transformers,,prefect,bag of words,java
+,,,pytorch,,,skip gram,oracle
+,,,mxnet,,,bert,mongodb
+,,,resnet,,,chatbot,cassandra
+,,,efficientnet,,,sentiment analysis,redis
+,,,,,,,talend
+,,,,,,,dbt
