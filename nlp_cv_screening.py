@@ -29,17 +29,9 @@ def extract_skills(csv_file):
         if area != 'skill area':
             for skill in skills:
                 skills_by_area[skill] = area
-
     return skills_by_area
 
-skills_by_area = extract_skills('CV_Screening_Skills.csv')
-
-# Preprocess CV text
-def preprocess_text(text):
-    tokens = word_tokenize(text)
-    stopwords_list = set(stopwords.words('english'))
-    tokens = [token.lower() for token in tokens if token.isalpha() and token.lower() not in stopwords_list]
-    return tokens
+skills_by_area = extract_skills('data/CV_Screening_Skills.csv')
 
 #############################################
 # Extract text from CVs in PDF
@@ -52,6 +44,20 @@ def extract_text_from_pdf(pdf_path):
             text += page.extract_text()
         text = text.replace('\n', ' ').lower()
     return text
+
+#############################################
+# Preprocess CV text with NLP
+#############################################
+
+def preprocess_text(text):
+    tokens = word_tokenize(text)
+    stopwords_list = set(stopwords.words('english'))
+    tokens = [token.lower() for token in tokens if token.isalpha() and token.lower() not in stopwords_list]
+    return tokens
+
+#############################################
+# Assign points for each skill mentioned
+#############################################
 
 def assign_points(pdf_path, points_by_cv, skill_areas):
     pdf_text = extract_text_from_pdf(pdf_path)
@@ -66,11 +72,7 @@ def assign_points(pdf_path, points_by_cv, skill_areas):
     cv_name = os.path.basename(pdf_path)
     points_by_cv[cv_name] = points_by_area
 
-#############################################
-# Assign points for each skill area mentioned
-#############################################
-
-pdf_folder = 'CVs'
+pdf_folder = 'data/CVs'
 points_by_cv = {}
 skill_areas = list(set(skills_by_area.values()))
 
@@ -84,7 +86,6 @@ data = {area: [] for area in skill_areas}
 for cv_name, points in points_by_cv.items():
     for area in skill_areas:
         data[area].append(points[area])
-
 
 #############################################
 # Plot results
