@@ -62,3 +62,6 @@ Keyword-based screening overlooks important soft skills, that might be relevant.
 If one wants to apply more fancy screening, there are available tools on the market, such as SkillPool.
 It would probably not pay off to build a tool yourself as the costs for development might outweigh the benefit,
 especially knowing that it's not a recurring problem.
+
+However, one has to be careful with any AI tool on the market, as it is not clear how they are built.
+There is one key question one has to ask oneself: **Is the tool calibrated for gender, racial, ethnical, religion or age bias?** For example, check this [article](hhttps://www.imd.org/research-knowledge/digital/articles/amazons-sexist-hiring-algorithm-could-still-be-better-than-a-human/) on how Amazon had developed a hiring algorithm that was gender-biased.
